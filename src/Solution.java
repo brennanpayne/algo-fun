@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.brennan.datastructures.List;
+import com.brennan.datastructures.ListNode;
+
 
 public class Solution {
 	public static void main(String[] args){
@@ -9,9 +12,10 @@ public class Solution {
 		while(input >= 0 ){
 			System.out.println("What do you want to do?");
 			System.out.print(
+					"1: Node Fun\n" + 
 					"0: calcPrimeNumbers\n" +
-							"-1: quit\n" 
-
+					"-1: quit\n"
+					
 					);
 			input = in.nextInt();
 
@@ -33,6 +37,15 @@ public class Solution {
 				Long duration = System.nanoTime() - startTime;
 				System.out.println("Duration: " + (duration * 0.000001) + " milliseconds");
 
+				break;
+			case 1:
+				System.out.println("Doing ListNode things");
+				
+				List<String> list = new List<String>();
+				list.addNode(new ListNode<String>("First"));
+				list.addNode(new ListNode<String>("Second"));
+				list.addNode(new ListNode<String>("Third"));
+				list.printList();
 				break;
 			default:			
 				System.out.println("Invalid response");
