@@ -12,10 +12,9 @@ public class Solution {
 		while(input >= 0 ){
 			System.out.println("What do you want to do?");
 			System.out.print(
-					"1: Node Fun\n" + 
-					"0: calcPrimeNumbers\n" +
-					"-1: quit\n"
-					
+					"1: LinkedList\n" + 
+							"0: calcPrimeNumbers\n" +
+							"-1: quit\n"			
 					);
 			input = in.nextInt();
 
@@ -39,13 +38,11 @@ public class Solution {
 
 				break;
 			case 1:
-				System.out.println("Doing ListNode things");
-				
-				List<String> list = new List<String>();
-				list.addNode(new ListNode<String>("First"));
-				list.addNode(new ListNode<String>("Second"));
-				list.addNode(new ListNode<String>("Third"));
-				list.printList();
+				System.out.println("Doing ListNode things:\n");
+				printLinkedListOptions();
+				playWithLinkedList();		
+
+
 				break;
 			default:			
 				System.out.println("Invalid response");
@@ -53,6 +50,49 @@ public class Solution {
 			}
 			System.out.println("---------------------------------");
 
+		}
+
+	}
+
+	private static void printLinkedListOptions(){
+		System.out.println("Add: a \n" +
+				"Insert: i \n" +
+				"Delete: d \n" +
+				"Print: p\n" +
+				"Quit: q\n" + 
+				"Options: ?");
+	}
+
+	public static void playWithLinkedList(){
+		List<String> list = new List<String>();
+		Scanner in = new Scanner(System.in);
+		while(true){
+			String input = in.nextLine();
+			switch(input.charAt(0)){
+			case 'a':
+				System.out.println("Add what?");
+				list.addNode(new ListNode<String>(in.nextLine()));
+				break;
+			case 'q':
+				System.out.println("Returning to main");
+				return;
+			case 'i':
+				// Insert string
+				break;
+			case 'p':
+				list.printList();
+				break;
+			case 'd':
+				
+				// Delete node at index i
+				break;
+			case '?':
+				printLinkedListOptions();
+				break;
+			default:
+				System.out.println("Invalid Response");
+				break;
+			}
 		}
 
 	}
