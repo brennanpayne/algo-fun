@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.brennan.datastructures.List;
+import com.brennan.datastructures.LinkedList;
 import com.brennan.datastructures.ListNode;
 
 
@@ -64,7 +64,7 @@ public class Solution {
 	}
 
 	public static void playWithLinkedList(){
-		List<String> list = new List<String>();
+		LinkedList<String> list = new LinkedList<String>();
 		Scanner in = new Scanner(System.in);
 		while(true){
 			String input = in.nextLine();
